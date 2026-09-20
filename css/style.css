@@ -70,12 +70,14 @@ h2 {
 .memo {
     font-size: 15px;
     display: inline;
-    margin-bottom: 14px;
 }
 h3 {
     display: inline;
     margin-right: 14px;
     font-size: 20px;
+}
+.wrap {
+    margin-top: 5px;
 }
 .memo3 {
     font-size: 13px;
@@ -122,6 +124,5 @@ li a {
 .memo3 {
     font-size: 12px;
 }
-
     
 }
