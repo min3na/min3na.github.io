@@ -110,16 +110,18 @@ footer {
 h3 {
     display: block;
     margin-right: 12px;
-    font-size: 1.2rem;
+    font-size: 20px;
 }
-
 li a {
-    padding: 14px 20px;
-    height: 150px;
+    padding: 12px 14px;
+    height: auto;
 }
-
-
-
+.memo, .memo2 {
+    font-size: 14px;
+}
+.memo3 {
+    font-size: 12px;
+}
 
     
 }
