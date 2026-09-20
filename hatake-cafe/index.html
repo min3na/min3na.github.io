@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HATAKE CAFE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+        <div class="hero">
+            <div class="hero-inner">
+                <header id="header">
+
+                    <div class="header-logo">
+                        <a href="#home"><img src="img/logo_yoko.png" alt="HATAKE CAFE"></a>
+                    </div>
+                    <nav class="header-nav" id="nav">
+                        <ul>
+                            <li><a href="#concept">CONCEPT</a></li>
+                            <li><a href="#new">NEW</a></li>
+                            <li><a href="#menu">MENU</a></li>
+                            <li><a href="#gallery">GALLERY</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#shop">SHOP</a></li>
+                            <li class="instagram"><a href="#" aria-label="Instagram"><img src="img/Instagram.png" alt=""></a></li>
+                        </ul>
+                    </nav>
+                    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </header>
+                <section id="home">
+                    <div class="section-inner">
+                        <h1><img src="img/logo.png" alt="HATAKE CAFE"></h1>
+                        <div class="text-box">
+                            <p class="hero-copy">畑から、<br class="br-sp">食卓へ。</p>
+                            <p class="hero-subtext">大豆と野菜が主役のカフェで、<br>土の恵みをまるごと味わう。</p>
+                        </div>
+                    </div>
+                    <div class="scroll-down" onclick="scrollToConcept()">
+                        <span></span>
+                        <p>SCROLL</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section id="concept">
+            <div class="section-inner fade-in">
+                <div class="img-wrap">
+                    <img src="img/c-img.jpg" alt="HATAKE CAFE店内">
+                </div>
+                <div class="text-wrap">
+                    <p class="en-title">CONCEPT</p>
+                    <h2>畑から生まれる、<br class="br-sp">おいしさ</h2>
+                    <div class="concept-text">
+                        <p>HATAKE CAFEは、<span class="line">国産大豆と旬の野菜を中心にした「植物性の食事」を提供するカフェ</span>です。<br>お肉を使わなくても、豊かで満足感のある食体験を届けることを信条としています。</p>
+                        <p>シェフ・田中絵里子は幼少期を農家で過ごし、土と食材の関係に深い敬意を抱いてきました。<br>「畑から食卓へ」——その一本の線を大切にした料理は、地元農家と連携した食材調達からはじまります。</p>
+                        <p>環境への配慮は調理だけにとどまりません。<br>容器・パッケージから店舗の内装まで、できるかぎり持続可能な素材を選んでいます。</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="new">
+            <div class="section-inner fade-in">
+                <p class="en-title">NEW PRODUCT</p>
+                <h2 class="j-title">新商品</h2>
+                <div class="hatake-title">
+                    <p class="hatake">はたけバーガー</p>
+                    <p class="feature">国産大豆100%のパティに、<br class="br-pc">京都・丹波産有機アボカドのソースを合わせた渾身の新作。</p>
+                </div>
+                <div class="img-area">
+                    <div id="item1"><img id="mainImg" src="img/burger1.jpg" alt="はたけバーガー"></div>
+                    <div id="subBox" class="img-area-right">
+                        <p id="item2" class="main-img-text">
+                            大豆の粗挽きパティは、肉厚でジューシー。グリルすることで表面に香ばしい焦げ目をつけ、植物性とは思えない食べ応えを実現しました。自家製アボカドソースとともに、全粒粉バンズではさんでどうぞ。
+                        </p>
+                        <div id="item3" class="new-thumb">
+                            <img src="img/thumb1.jpg" alt="はたけバーガー1" onclick="imgChange('burger1.jpg')">
+                            <img src="img/thumb2.jpg" alt="はたけバーガー2" onclick="imgChange('burger2.jpg')">
+                            <img src="img/thumb3.jpg" alt="はたけバーガー3" onclick="imgChange('burger3.jpg')">
+                        </div>
+                        <p id="item4" class="new-price"><span class="big-price">¥1,280</span>税込/セット+¥350</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <div class="section-inner fade-in">
+                <p class="en-title">MENU</p>
+                <div class="menu-title">
+                    <h2 class="j-title">メニュー</h2>
+                    <div class="menu-tabs" onclick="switchTab(event)">
+                        <button class="tab-btn active" data-target="coffee">コーヒー</button>
+                        <button class="tab-btn" data-target="burger">バーガー</button>
+                        <button class="tab-btn" data-target="morning">モーニング</button>
+                        <button class="tab-btn" data-target="dessert">デザート</button>
+                    </div>
+                </div>
+                <div class="coffee menu-content active">
+                    <!-- <h3>コーヒー</h3> -->
+                    <dl class="menu-grid">
+                        <div>
+                            <dt>はたけブレンド</dt>
+                            <dd>畑の土の香りをイメージした深煎りブレンド / ¥580</dd>
+                        </div>
+                        <div>
+                            <dt>グリーンラテ</dt>
+                            <dd>抹茶×オーツミルクの濃厚な一杯 / ¥680</dd>
+                        </div>
+                        <div>
+                            <dt>ほうじ茶ラテ</dt>
+                            <dd>国産ほうじ茶とアーモンドミルク / ¥650</dd>
+                        </div>
+                        <div>
+                            <dt>コールドブリュー</dt>
+                            <dd>12時間水出しのまろやかアイスコーヒー / ¥620</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="burger menu-content">
+                    <!-- <h3>バーガー</h3> -->
+                    <dl class="menu-grid">
+                        <div>
+                            <dt>はたけバーガー</dt>
+                            <dd>大豆ミートパティ・アボカドソース・有機レタス / ¥1,280</dd>
+                        </div>
+                        <div>
+                            <dt>マッシュルームバーガー</dt>
+                            <dd>ポルチーニ風味のパティ・トリュフマヨ / ¥1,380</dd>
+                        </div>
+                        <div>
+                            <dt>テリヤキ豆腐バーガー</dt>
+                            <dd>厚切り豆腐のジューシーテリヤキ / ¥1,180</dd>
+                        </div>
+                        <div>
+                            <dt>スパイシービーンズ</dt>
+                            <dd>レッドキドニー×チポトレの辛口バーガー / ¥1,250</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="morning menu-content">
+                    <!-- <h3>モーニング</h3> -->
+                    <dl class="menu-grid">
+                            <div>
+                            <dt>はたけモーニングセット</dt>
+                            <dd>全粒粉トースト・季節のスープ・サラダ付 / ¥880</dd>
+                        </div>
+                        <div>
+                            <dt>グラノーラボウル</dt>
+                            <dd>グラノーラ・豆乳ヨーグルト・旬のフルーツ / ¥780</dd>
+                        </div>
+                        <div>
+                            <dt>アボカドトースト</dt>
+                            <dd>サワードウ×有機アボカド×チアシード / ¥850</dd>
+                        </div>
+                        <div>
+                            <dt>豆乳スクランブル</dt>
+                            <dd>ひよこ豆のスクランブルエッグ風 / ¥820</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="dessert menu-content">
+                    <!-- <h3>デザート</h3> -->
+                    <dl class="menu-grid">
+                        <div>
+                            <dt>豆腐ティラミス</dt>
+                            <dd>絹豆腐×エスプレッソの軽やかなティラミス / ¥680</dd>
+                        </div>
+                        <div>
+                            <dt>黒豆アイス</dt>
+                            <dd>国産黒豆の濃厚植物性アイスクリーム / ¥580</dd>
+                        </div>
+                        <div>
+                            <dt>ずんだロールケーキ</dt>
+                            <dd>枝豆クリームのやさしい甘さ / ¥620</dd>
+                        </div>
+                        <div>
+                            <dt>抹茶プリン</dt>
+                            <dd>京都宇治抹茶の濃厚なめらかプリン / ¥620</dd>
+                        </div>
+                    </dl>
+                </div>
+                <p class="notes">※価格は全て税込表示です。季節により内容が変更になる場合があります。</p>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="section-inner fade-in">
+                <div class="title-wrap">
+                    <h2 class="j-title">ギャラリー</h2>
+                    <p class="en-title">GALLERY</p>
+                </div>
+                <div class="shop-image">
+                    <img src="img/p01.jpg" alt="">
+                    <img src="img/p02.jpg" alt="">
+                    <img src="img/p03.jpg" alt="">
+                    <img src="img/p04.jpg" alt="">
+                    <img src="img/p05.jpg" alt="">
+                    <img src="img/p06.jpg" alt="">
+                    <img src="img/p07.jpg" alt="">
+                    <img src="img/p08.jpg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="section-inner fade-in">
+                <p class="en-title">FAQ</p>
+                <h2 class="j-title">よくある質問</h2>
+
+                <dl class="faq">
+                    <div class="faq-item">
+                        <dt class="faq-question" onclick = "toggleFaq(this)">
+                            Q. 大豆アレルギーがあっても食べられますか？
+                        </dt>
+                        <dd class="faq-answer">
+                            A. 申し訳ございませんが、当カフェのメニューの多くに大豆・大豆加工品が使用されております。アレルギーをお持ちの方は、ご注文前にスタッフまでお申し付けください。
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt class="faq-question" onclick="toggleFaq(this)">
+                            Q. お肉は本当に一切使っていないのですか？
+                        </dt>
+                        <dd class="faq-answer">
+                            A. はい、すべてのメニューでお肉・魚は使用しておりません。詳しいアレルゲン情報は店舗にてご確認いただけます。
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt class="faq-question" onclick="toggleFaq(this)">
+                            Q. テイクアウトはできますか？
+                        </dt>
+                        <dd class="faq-answer">
+                            A. 一部メニューを除き、テイクアウト可能です。
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt class="faq-question" onclick="toggleFaq(this)">
+                            Q. 予約はできますか？
+                        </dt>
+                        <dd class="faq-answer">
+                            A. 4名様以上のご利用から、お電話にて承っております。
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt class="faq-question" onclick="toggleFaq(this)">
+                            Q. 駐車場はありますか？
+                        </dt>
+                        <dd class="faq-answer">
+                            A. 店舗専用の駐車場はございません。近隣のコインパーキングをご利用ください。自転車スタンドは店舗前に4台分ご用意しております。
+                        </dd>
+                    </div>
+                </dl>
+
+            </div>
+        </section>
+
+        <section id="shop">
+            <div class="section-inner fade-in">
+                <div class="shop-text">
+                    <p class="en-title">SHOP INFO</p>
+                    <h2 class="j-title">店舗情報</h2>
+
+                    <div class="address-block shop-item">
+                        <p class="shop-en">ADDRESS</p>
+                        <p class="address shop-item-main">〒150-0001<br>東京都渋谷区神宮前3-12-8 HATAKEビル 1F</p>
+                    </div>
+
+                    <table class="hours shop-item">
+                        <caption class="shop-en">HOURS</caption>
+                        <tr>
+                            <td>月〜金</td>
+                            <td>8:00 – 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>土・日・祝</td>
+                            <td>9:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>定休日</td>
+                            <td>毎週水曜日</td>
+                        </tr>
+                    </table>
+
+                    <address class="contact shop-item">
+                        <p class="shop-en">CONTACT</p>
+                        <div class="shop-item-main">
+                            <p class="tel">03-1234-5678</p>
+                            <p class="mail">info@hatakecafe.jp</p>
+                        </div>
+                    </address>
+
+                    <div class="access shop-item">
+                        <p class="shop-en">ACCESS</p>
+                        <div class="shop-item-main">東京メトロ銀座線・半蔵門線「表参道駅」A2出口より徒歩5分</div>
+                    </div>
+                </div>
+
+
+                <div class="shop-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6482.694937156773!2d139.70387551761655!3d35.668445389907866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca39c66f2db%3A0x7a39a6f710a18802!2z44CSMTUwLTAwMDE!5e0!3m2!1sja!2sjp!4v1789555304013!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <ul class="footer-list">
+            <li><a href="#">会社概要</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#">カスタマーハラスメント対応方針</a></li>
+        </ul>
+        <div class="footer-logo">
+            <a href="#home">
+                <img src="img/logo_yoko.png" alt="HATAKE CAFE">
+            </a>
+        </div>
+        <p class="copyright">
+            &copy; 2026 HATAKE CAFE. All rights reserved.
+        </p>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
