@@ -1,0 +1,125 @@
+/* reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    margin-block-end: 0;
+}
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+textarea {
+    white-space: revert;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+body {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 50px 80px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+header {
+    display: flex;
+    align-items: baseline;
+}
+main {
+    flex: 1;
+}
+h1, h2, h3, .name { 
+    font-family: "Josefin Sans", sans-serif;
+}
+h1 {
+    font-size: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 0.05rem;
+}
+h2 {
+    margin-bottom: 10px;
+}
+.name {
+    font-size: 20px;
+}
+.memo {
+    font-size: 15px;
+    display: inline;
+    margin-bottom: 14px;
+}
+h3 {
+    display: inline;
+    margin-right: 14px;
+    font-size: 20px;
+}
+.memo3 {
+    font-size: 13px;
+}
+li {
+    border: 1px solid #000;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+li a {
+    display: block;
+    padding: 20px;
+    height: 150px;
+}
+li a:hover {
+    color: #fff;
+    transition: 0.3s;
+    background-color: #af9521;
+}
+footer {
+    font-size: 10px;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+ body {
+    max-width: 768px;
+    padding: 20px;
+}
+h3 {
+    display: block;
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+li a {
+    padding: 14px 20px;
+    height: 150px;
+}
+
+
+
+
+    
+}
