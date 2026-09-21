@@ -645,6 +645,10 @@ section {
 
 
 /* hero */
+#home {
+    padding-top: 80px;
+}
+    
 #home h1 img {
     width: 180px;
 }
