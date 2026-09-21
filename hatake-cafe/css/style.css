@@ -394,6 +394,7 @@ span.big-price {
     border: 1px solid #23281F; 
     background-color: transparent;
     cursor: pointer;
+    color: #23281F;
 }
 .tab-btn.active {
     background-color: #C98A3B;
