@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <title>Shimerike</title>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1><img src="img/logo.png" alt="Shimerikeタイトルロゴ"></h1>
+            <p class="copy">湿度で選ぶ、今日の過ごし方</p>
+        </header>
+        <main>
+            <section id="current" aria-live="polite">
+                <h2>現在地の天気を表示中</h2>
+
+                <label for="citySelect" class="sr-only">都市を選択する</label>
+                <select name="current" id="citySelect">
+                    <option value="">都市を選択する</option>
+                    <option value="Sapporo">札幌（北海道）</option>
+                    <option value="Asahikawa">旭川（北海道）</option>
+                    <option value="Aomori">青森（青森県）</option>
+                    <option value="Morioka">盛岡（岩手県）</option>
+                    <option value="Sendai">仙台（宮城県）</option>
+                    <option value="Niigata">新潟（新潟県）</option>
+                    <option value="Utsunomiya">宇都宮（栃木県）</option>
+                    <option value="Tokyo">東京（東京都）</option>
+                    <option value="Yokohama">横浜（神奈川県）</option>
+                    <option value="Shizuoka">静岡（静岡県）</option>
+                    <option value="Nagoya">名古屋（愛知県）</option>
+                    <option value="Kanazawa">金沢（石川県）</option>
+                    <option value="Kyoto">京都（京都府）</option>
+                    <option value="Osaka">大阪（大阪府）</option>
+                    <option value="Kobe">神戸（兵庫県）</option>
+                    <option value="Tottori">鳥取（鳥取県）</option>
+                    <option value="Okayama">岡山（岡山県）</option>
+                    <option value="Hiroshima">広島（広島県）</option>
+                    <option value="Takamatsu">高松（香川県）</option>
+                    <option value="Matsuyama">松山（愛媛県）</option>
+                    <option value="Fukuoka">福岡（福岡県）</option>
+                    <option value="Kumamoto">熊本（熊本県）</option>
+                    <option value="Naha">那覇（沖縄県）</option>
+                    <option value="Ishigaki">石垣（沖縄県）</option>
+                </select>
+
+            </section>
+
+            <section id="today" aria-live="polite">
+                <h2><span id="city"></span>の天気</h2>
+                <p class="todayWe">今日の天気<span id="weatherDate"></span></p>
+                <div class="tenki">
+                    <div class="tenki-img">
+                        <img id="weatherIcon" src="" alt="天気アイコン">
+                    </div>
+                    <div class="weather-info">
+                        <p class="weMain">「<span  id="weatherMain"></span>」</p>
+                        <div class="max">
+                            <p class="max-temp">最高気温</p>
+                            <p class="temp"><span id="tempMax"></span>℃</p>
+                        </div>
+                        <div class="min">
+                            <p class="min-temp">最低気温</p>
+                            <p class="temp"><span id="tempMin"></span>℃</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="humidity" aria-live="polite">
+                <h2>湿度</h2>
+                <p class="sub-text">このアプリは"外の湿度"を教えてくれるため、<br class="br-sp">室内の湿度とは異なります。</p>
+                <div class="humid">
+                    <img id="humidImg" src="" alt="湿度計">
+                    <div class="humid-text">
+                        <p class="humidPer"><span id="humidityValue"></span>%</p>
+                        <p id="humidityTitle"></p>
+                        <p id="humidityMessage"></p>
+                    </div>
+                </div>
+                <div class="humidSub">
+                    <div class="sub-wrap">
+                        <p class="kashitsu">加湿器</p>
+                        <span id="humidifierStatus"></span>
+                    </div>
+                    <div class="sub-wrap">
+                        <p class="jyoshitsu">除湿器</p>
+                        <span id="dehumidifierStatus"></span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer>
+            <p class="copy-right">&copy;shimerike All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

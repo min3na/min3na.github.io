@@ -1,0 +1,333 @@
+/* =========================
+   Reset CSS
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* PC */
+.br-sp, .sr-only {
+  display: none;
+}
+body {
+  font-family: "Zen Maru Gothic", sans-serif;
+  letter-spacing: 0.1em;
+  color: #4a6272;
+  background-image: url(../img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.content {
+  width:  min(800px, 100%);
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#current {
+  padding: 20px 0;
+}
+#today, #humidity {
+  padding: 40px 0;
+}
+
+/* text */
+.copy {
+  font-size: 20px;
+}
+h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* header */
+header {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+h1 img {
+  width: 280px;
+  height: auto;
+}
+
+/* current */
+#citySelect{
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+  color: #4a6272;
+  border: 2px solid #4a6272;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+}
+
+/* today */
+#city {
+  border-bottom: 3px solid #75a9d3;
+}
+.todayWe {
+  font-size: 21px;
+  text-align: center;
+  margin: 30px 0;
+}
+#weatherDate {
+  font-size: 21px;
+  font-weight: 900;
+  color: #3a90d6;
+  margin-left: 20px;
+}
+.weMain {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.tenki {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.max, .min {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.max-temp, .min-temp {
+  background-color: #75a9d3;
+  padding: 2px 8px;
+  border-radius: 18px;
+  font-size: 15px;
+  color: #eef8ff;
+  margin-right: 10px;
+  text-align: center;
+}
+.temp {
+  font-size: 19px;
+  line-height: 19px;
+}
+#tempMax, #tempMin {
+  font-size: 24px;
+  font-weight: 900;
+}
+.tenki-img {
+  padding: 15px;
+  background-color: #eef8ff;
+  border-radius: 50%;
+}
+#weatherIcon {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+  width: 150px;    
+}
+
+/* humidity */
+.humid {
+  margin: 40px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.sub-text {
+  font-size: 13px;
+  color: #d33c3c;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#humidityMessage {
+  white-space: pre-line;
+}
+.humidPer {
+  font-size: 30px;
+  font-weight: 900;
+}
+.humid-text {
+  width: 45%;
+  position: relative;
+  display: inline-block;
+  margin-left: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #eef8ff;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.humid-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-style: solid;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #eef8ff transparent transparent;
+  translate: -100% -50%;
+  transform: skew(0, -10deg);
+  transform-origin: right;
+}
+.humidSub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kashitsu, .jyoshitsu {
+  background-color: #75a9d3;
+  padding: 2px 8px;
+  border-radius: 18px;
+  font-size: 15px;
+  color: #eef8ff;
+  margin-right: 10px;
+}
+.sub-wrap {
+  width: 220px;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+/* status色変更 */
+.status-normal {
+  color: #4a6272;
+}
+.status-unnecessary {
+  color: #aaa;
+}
+.status-necessary {
+  color: #d33c3c;
+}
+
+/* footer */
+.copy-right {
+  font-size: 10px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+
+
+
+
+
+/* =========================
+   SP レスポンシブ
+========================= */
+
+@media (max-width: 768px) {
+  .br-sp {
+    display: block;
+  }
+  body {
+    max-width: 768px;
+  }
+  .content {
+    width: 100%;
+    max-width: 768px;
+    padding: 0 10px;
+  }
+  #today, #humidity {
+    max-width: 768px;
+    padding: 30px 0;
+  }
+
+  /* text */
+  .copy {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+
+  /* header */
+  header {
+    max-width: 768px;
+    margin: 0 auto;
+    height: auto;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+  h1 img {
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /* current */
+
+  /* today */
+  .todayWe {
+    font-size: 20px;
+  }
+  .weMain {
+    text-align: center;
+  }
+  .tenki {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* humidity */
+  .humid {
+    margin: 20px 0 40px;
+    flex-direction: column;
+  }
+  #humidImg {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .humid-text {
+    width: 90%;
+    margin-top: 16px;
+    text-align: left;
+    font-size: 16px;
+  }
+  .humid-text::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-width: 0 8px 16px 8px;
+    border-color: transparent transparent #eef8ff ;
+    translate: -50%  -100% ;
+    transform: skew(-10deg);
+    transform-origin: bottom;
+  }
+
+}
