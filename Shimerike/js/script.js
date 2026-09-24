@@ -95,15 +95,25 @@ async function getWeather(url) {
     // 都市を選択
     const citySelect = document.getElementById("citySelect");
 
+    const WORKER_URL = "https://shimerike-weather.shime-rike.workers.dev/";
+
     // 都市名から呼ぶ場合
     function buildUrlByCity(city) {
-    return `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=ja`;
-    }
+    const params = new URLSearchParams({
+        city: city
+    });
 
+    return `${WORKER_URL}?${params.toString()}`;
+    }
 
     // 緯度経度から呼ぶ場合
     function buildUrlByLocation(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ja`;
+    const params = new URLSearchParams({
+        lat: String(lat),
+        lon: String(lon)
+    });
+
+    return `${WORKER_URL}?${params.toString()}`;
     }
 
     // 現在地取得 → 天気取得
