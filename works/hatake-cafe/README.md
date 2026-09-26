@@ -1,10 +1,11 @@
 # HATAKE CAFE
 植物性素材のみを使用した架空のカフェのWebサイトです。
+制作年：2026年
 
 ![HATAKE CAFEのモックアップ](img/mockup.jpg)
 
 ## デモ
-https://min3na.github.io/hatake-cafe/
+https://min3na.github.io/works/hatake-cafe/
 
 ## 使用技術
 - HTML
@@ -16,7 +17,7 @@ https://min3na.github.io/hatake-cafe/
 [claudeによる要件書](hatake-cafe-requirements.md)
 [FigmaによるWF](img/figma_wf.jpg)
 2. 要件書のデザインコンセプトをもとにロゴ・配色を決定
-3. html/CSSによるコーディング（レスポンシブ対応）
+3. HTML/CSSによるコーディング（レスポンシブ対応）
 4. JavaScriptによるインタラクションを実装
 
 ## JavaScript
