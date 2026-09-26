@@ -1,1 +1,0 @@
-const API_KEY = "ここに自分のOpenWeatherMapのAPIキーを入力してください";
