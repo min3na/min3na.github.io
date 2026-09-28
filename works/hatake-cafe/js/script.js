@@ -40,34 +40,28 @@ function toggleFaq(question){
     question.nextElementSibling.classList.toggle("active");
 }
 
-
-
 // new PCとSPで要素の順を変更する
 // 要素を取得
-const item1 = document.getElementById('item1');
-const item2 = document.getElementById('item2');
-const item3 = document.getElementById('item3');
-const item4 = document.getElementById('item4');
-const subBox = document.getElementById('subBox');
+const item1 = document.getElementById("item1");
+const item2 = document.getElementById("item2");
+const subBox = document.getElementById("subBox");
 
 // 画面幅に応じてHTML構造を切り替える関数
 function replaceElements() {
-const isSP = window.matchMedia('(max-width: 768px)').matches;
+    const isSP = window.matchMedia("(max-width: 768px)").matches;
 
-if (isSP) {
-    // 【SP時の処理】1, 3, 2, 4 の順になるように入れ替える
-    // item2 を subBox の中で item3 の後に移動させる
-    item3.after(item2); 
-} else {
-    // 【PC時の処理】元の構造に戻す (1, [2, 3, 4])
-    // item2 を subBox の先頭に戻す
-    subBox.prepend(item2);
-}
+    if (isSP) {
+        // SP:item2を先頭に
+        item2.after(item1); 
+    } else {
+        // PC：元の構造に戻す
+        subBox.prepend(item1);
+    }
 }
 
 // ページ読み込み時と画面リサイズ時に実行
-window.addEventListener('load', replaceElements);
-window.addEventListener('resize', replaceElements);
+window.addEventListener("load", replaceElements);
+window.addEventListener("resize", replaceElements);
 
 // スムーズスクロール
 function smoothScroll(){
