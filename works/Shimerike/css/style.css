@@ -132,13 +132,16 @@ h1 img {
   margin-bottom: 8px;
 }
 .max-temp, .min-temp {
-  background-color: #75a9d3;
+  background-color: #d39075;
   padding: 2px 8px;
   border-radius: 18px;
   font-size: 15px;
   color: #eef8ff;
   margin-right: 10px;
   text-align: center;
+}
+.min-temp {
+  background-color: #75a9d3;
 }
 .temp {
   font-size: 19px;
@@ -210,12 +213,15 @@ h1 img {
   align-items: center;
 }
 .kashitsu, .jyoshitsu {
-  background-color: #75a9d3;
+  background-color: #d39075;
   padding: 2px 8px;
   border-radius: 18px;
   font-size: 15px;
   color: #eef8ff;
   margin-right: 10px;
+}
+.jyoshitsu {
+  background-color: #75a9d3;
 }
 .sub-wrap {
   width: 220px;

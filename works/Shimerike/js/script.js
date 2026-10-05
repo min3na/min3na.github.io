@@ -1,3 +1,38 @@
+const HUMIDITY_LEVELS = [
+  { max: 29, title: "からっから！", message: "空気がかなり乾燥しています。\n加湿器を使って、室内の湿度を上げましょう！",
+    humidifier: ["使ったほうがいい", "status-necessary"],
+    dehumidifier: ["使う必要なし", "status-unnecessary"], img: "img/humid-1.png" },
+  { max: 39, title: "乾燥注意！", message: "少し乾燥気味です。\n加湿器を使うなど、もう少し湿度を上げてみましょう。",
+    humidifier: ["あると快適かも", "status-normal"],
+    dehumidifier: ["使う必要なし", "status-unnecessary"], img: "img/humid-2.png" },
+  { max: 59, title: "いい感じ！", message: "快適に過ごしやすい湿度です。\nこの調子で、心地よい湿度をキープしましょう。",
+    humidifier: ["使う必要なし", "status-unnecessary"],
+    dehumidifier: ["使う必要なし", "status-unnecessary"], img: "img/humid-3.png" },
+  { max: 69, title: "ちょっとジメジメ", message: "湿度が高めです。\nカビやダニが増えやすくなるため、換気や除湿を意識しましょう。",
+    humidifier: ["使う必要なし", "status-unnecessary"],
+    dehumidifier: ["あると快適かも", "status-normal"], img: "img/humid-4.png" },
+  { max: Infinity, title: "かなりジメジメ！", message: "湿度がかなり高くなっています。\n換気や除湿機を活用して、湿度を下げる対策をしましょう！",
+    humidifier: ["使う必要なし", "status-unnecessary"],
+    dehumidifier: ["使ったほうがいい", "status-necessary"], img: "img/humid-5.png" },
+];
+
+function showHumidity(humidity) {
+  const level = HUMIDITY_LEVELS.find((l) => humidity <= l.max);
+
+  document.getElementById("humidityValue").textContent = humidity;
+  document.getElementById("humidityTitle").textContent = level.title;
+  document.getElementById("humidityMessage").textContent = level.message;
+
+  const humidifier = document.getElementById("humidifierStatus");
+  humidifier.textContent = level.humidifier[0];
+  humidifier.className = level.humidifier[1];   
+
+  const dehumidifier = document.getElementById("dehumidifierStatus");
+  dehumidifier.textContent = level.dehumidifier[0];
+  dehumidifier.className = level.dehumidifier[1];
+
+  document.getElementById("humidImg").src = level.img;
+}
 
 async function getWeather(url) {
     try {
@@ -25,56 +60,13 @@ async function getWeather(url) {
 
     // 天気アイコン表示
     const iconCode = data.weather[0].icon;
-    document.getElementById("weatherIcon").src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    document.getElementById("weatherIcon").alt = data.weather[0].description;
+    const icon = document.getElementById("weatherIcon");
+    icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    icon.alt = data.weather[0].description;
+    icon.style.display = "";
 
 
-    // 湿度コメント
-    const humidity = data.main.humidity;
-
-    document.getElementById("humidityValue").textContent = humidity;
-
-    if (humidity <= 29) {
-        document.getElementById("humidityTitle").textContent = "からっから！";
-        document.getElementById("humidityMessage").textContent = "空気がかなり乾燥しています。\n加湿器を使って、室内の湿度を上げましょう！";
-        document.getElementById("humidifierStatus").textContent = "使ったほうがいい";
-        document.getElementById("humidifierStatus").className = "status-necessary";
-        document.getElementById("dehumidifierStatus").textContent = "使う必要なし";
-        document.getElementById("dehumidifierStatus").className = "status-unnecessary";
-        document.getElementById("humidImg").src = "img/humid-1.png";
-    } else if (humidity <= 39) {
-        document.getElementById("humidityTitle").textContent = "乾燥注意！";
-        document.getElementById("humidityMessage").textContent = "少し乾燥気味です。\n加湿器を使うなど、もう少し湿度を上げてみましょう。";
-        document.getElementById("humidifierStatus").textContent = "あると快適かも";
-        document.getElementById("humidifierStatus").className = "status-normal";
-        document.getElementById("dehumidifierStatus").textContent = "使う必要なし";
-        document.getElementById("dehumidifierStatus").className = "status-unnecessary";
-        document.getElementById("humidImg").src = "img/humid-2.png";
-    } else if (humidity <= 59) {
-        document.getElementById("humidityTitle").textContent = "いい感じ！";
-        document.getElementById("humidityMessage").textContent = "快適に過ごしやすい湿度です。\nこの調子で、心地よい湿度をキープしましょう。";
-        document.getElementById("humidifierStatus").textContent = "使う必要なし";
-        document.getElementById("humidifierStatus").className = "status-unnecessary";
-        document.getElementById("dehumidifierStatus").textContent = "使う必要なし";
-        document.getElementById("dehumidifierStatus").className = "status-unnecessary";
-        document.getElementById("humidImg").src = "img/humid-3.png";
-    } else if (humidity <= 69) {
-        document.getElementById("humidityTitle").textContent = "ちょっとジメジメ";
-        document.getElementById("humidityMessage").textContent = "湿度が高めです。\nカビやダニが増えやすくなるため、換気や除湿を意識しましょう。";
-        document.getElementById("humidifierStatus").textContent = "使う必要なし";
-        document.getElementById("humidifierStatus").className = "status-unnecessary";
-        document.getElementById("dehumidifierStatus").textContent = "あると快適かも";
-        document.getElementById("dehumidifierStatus").className = "status-normal";
-        document.getElementById("humidImg").src = "img/humid-4.png";
-    } else {
-        document.getElementById("humidityTitle").textContent = "かなりジメジメ！";
-        document.getElementById("humidityMessage").textContent = "湿度がかなり高くなっています。\n換気や除湿機を活用して、湿度を下げる対策をしましょう！";
-        document.getElementById("humidifierStatus").textContent = "使う必要なし";
-        document.getElementById("humidifierStatus").className = "status-unnecessary";
-        document.getElementById("dehumidifierStatus").textContent = "使ったほうがいい";
-        document.getElementById("dehumidifierStatus").className = "status-necessary";
-        document.getElementById("humidImg").src = "img/humid-5.png";
-    }
+    showHumidity(data.main.humidity);
 
     } catch (error) {
     console.error(error);
@@ -87,6 +79,13 @@ async function getWeather(url) {
     document.getElementById("humidityMessage").textContent = "-";
     document.getElementById("humidifierStatus").textContent = "-";
     document.getElementById("dehumidifierStatus").textContent = "-";
+    document.getElementById("weatherDate").textContent = "-";
+    document.getElementById("humidifierStatus").className = "";
+    document.getElementById("weatherIcon").src = "";
+    document.getElementById("weatherIcon").alt = "";
+    document.getElementById("weatherIcon").style.display = "none";
+    document.getElementById("humidImg").src = "";
+    document.getElementById("humidImg").alt = "";
 
     
     }
@@ -122,7 +121,7 @@ async function getWeather(url) {
         const url = buildUrlByLocation(position.coords.latitude, position.coords.longitude);
         getWeather(url);
     },
-    (error) => {
+    () => {
         const url = buildUrlByCity("Tokyo");
         getWeather(url);
     }
